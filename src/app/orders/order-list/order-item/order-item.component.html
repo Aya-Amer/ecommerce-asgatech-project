@@ -1,0 +1,54 @@
+<!-- <div class="d-flex">
+  <div><img class="card-img-top" [src]="order.thumbnail" alt="order.title"/></div>
+  <div></div>
+  <div></div>
+</div> -->
+<div class="card py-3 border-0 border-bottom" style="max-width: 100vw">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        class="img-fluid rounded"
+        [src]="order.thumbnail"
+        alt="order.title"
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <!-- <h5 class="card-title">Card title</h5> -->
+        <p class="card-text text-start fst-normal fs-5">
+          {{ order.description }}
+        </p>
+        <div class="text-start stockStyle fw-bold">
+          {{
+            order.stock >= QtyValue
+              ? ("in stock" | uppercase)
+              : ("out of stock" | uppercase)
+          }}
+        </div>
+        <div class="text-start">
+          <label for="quantity" class="styleQtyLabel">Quantity:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            [(ngModel)]="QtyValue"
+            class="qtyStyle mx-2"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 py-3 text-end d-flex flex-column align-items-end">
+      <div class="discountStyle d-inline-block">
+        {{ order.discountPercentage }} % off
+      </div>
+      <div class="priceStyle d-inline-block">{{ order.price }} EGP</div>
+      <div>
+        List price:
+        <span class="text-decoration-line-through"
+          >{{ order.price * (1 + order.discountPercentage / 100) }} EGP</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="row mx-5">
+  <div class="d-flex justify-content-between border-bottom">
+    <span class="fw-bold fs-6">All Orders</span>
+    <span class="mb-1 align-bottom">Price</span>
+  </div>
+  <app-order-item
+    *ngFor="let order of orders; let i = index"
+    [order]="order"
+    [index]="i"
+  ></app-order-item>
+  <div class="text-end fw-bold fs-6">
+    <span>Total Price:</span><span> {{ totalPrice }} EGP</span>
+  </div>
+
+  <div class="d-grid gap-2 col-4 mx-auto mt-2">
+    <button class="btn btn-warning" type="button" (click)="BuyItems()">
+      Buy
+    </button>
+  </div>
+</div>
