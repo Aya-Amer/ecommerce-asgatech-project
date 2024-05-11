@@ -1,0 +1,32 @@
+<!-- <div class="col-lg-3 col-md-2 col-sm-1"> -->
+<div
+  [ngClass]="{
+    'card h-100 pb-3': true,
+    highlightEdit: adminUser && product.stock < 35
+  }"
+>
+  <img class="card-img-top" [src]="product.thumbnail" alt="product.title" />
+  <div class="card-block">
+    <!-- <h4 class="card-title">{{ product.title }}</h4> -->
+    <p class="card-text d-inline-block text-truncate pt-1 mb-1">
+      {{ product.description }}
+    </p>
+    <!-- <div class="star-rating">
+      <i class="fa fa-star" *ngFor="let star of stars"></i>
+      <i class="fa fa-star-half" *ngIf="product.rating % 1 !== 0"></i>
+    </div> -->
+    <div class="text-start px-2">
+      <p class="fw-bold mb-0">Price: {{ product.price }} EGP</p>
+      <p class="fw-bold discountStyle">
+        Discount: {{ product.discountPercentage }} %
+      </p>
+    </div>
+    <a
+      *ngIf="adminUser && product.stock < 35"
+      href=""
+      class="btn btn-danger"
+      >Edit Quantity</a
+    >
+  </div>
+</div>
+<!-- </div> -->
