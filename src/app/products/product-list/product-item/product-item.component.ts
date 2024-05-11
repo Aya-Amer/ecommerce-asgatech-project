@@ -7,7 +7,6 @@ import { Product } from '../../product.model';
   styleUrls: ['./product-item.component.scss'],
 })
 export class ProductItemComponent {
-  // stars =  [1,2,3,4,5];
   adminUser = true;
   @Input() product: Product;
   @Input() index: number;

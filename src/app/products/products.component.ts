@@ -7,9 +7,6 @@ import { DataStorageService } from '../shared/data-storage.service';
 })
 export class ProductsComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService) {}
-  // storeData() {
-  //   this.dataStorageService.storeProducts();
-  // }
   ngOnInit() {
     this.dataStorageService.fetchProducts().subscribe();
   }
