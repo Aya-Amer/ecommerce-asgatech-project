@@ -16,6 +16,7 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
 import { OrderItemComponent } from './orders/order-list/order-item/order-item.component';
 import { FormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AuthComponent } from './auth/auth.component';
     OrderListComponent,
     OrderItemComponent,
     AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [ProductService, OrderService],
